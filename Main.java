@@ -68,10 +68,10 @@ public class Main
 class MainFrame extends JFrame
 {
    
-	private static final long serialVersionUID = 1L;
-	private Thread readerThread;
-	private JTextField statusColor;
-	private JPanel statusBar;
+    private static final long serialVersionUID = 1L;
+    private Thread readerThread;
+    private JTextField statusColor;
+    private JPanel statusBar;
     private MyTableModel model;
     private JTable table;
     private TableColumn tcol;
@@ -95,10 +95,10 @@ class MainFrame extends JFrame
 
     public MainFrame()
     {
-    	if(bxbhost.contains("dev")) {
-    		setTitle("Omega DEV System");
+    	if(host.contains("dev")) {
+    		setTitle("DEV System");
     	} else {
-    		setTitle("Omega PROD System");
+    		setTitle("PROD System");
     	}
         statushash = new HashMap<String,String>();
         readerThread = new Thread(new Reader());
