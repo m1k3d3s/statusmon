@@ -68,10 +68,10 @@ public class Main
 class MainFrame extends JFrame
 {
    
-	private static final long serialVersionUID = 1L;
-	private Thread readerThread;
-	private JTextField statusColor;
-	private JPanel statusBar;
+    private static final long serialVersionUID = 1L;
+    private Thread readerThread;
+    private JTextField statusColor;
+    private JPanel statusBar;
     private MyTableModel model;
     private JTable table;
     private TableColumn tcol;
@@ -96,9 +96,9 @@ class MainFrame extends JFrame
     public MainFrame()
     {
     	if(bxbhost.contains("dev")) {
-    		setTitle("Omega DEV System");
+    		setTitle("DEV System");
     	} else {
-    		setTitle("Omega PROD System");
+    		setTitle("PROD System");
     	}
         statushash = new HashMap<String,String>();
         readerThread = new Thread(new Reader());
@@ -242,7 +242,7 @@ class MainFrame extends JFrame
 			try {
 				socket = new Socket(bxbhost,bxbport_int);
 				in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                printwriter = new PrintWriter(socket.getOutputStream(),true);
+                		printwriter = new PrintWriter(socket.getOutputStream(),true);
 				} catch (UnknownHostException e1) {
 					//e1.printStackTrace();
 					//log.log(Level.WARNING, "Unable to connect to host:port");
